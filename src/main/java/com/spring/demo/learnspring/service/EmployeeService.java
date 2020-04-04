@@ -20,4 +20,8 @@ public class EmployeeService {
     public Employee findById(Integer id) {
         return employeeRepository.findById(id);
     }
+
+    public void create(Employee employee) {
+        employeeRepository.save(employee);
+    }
 }
