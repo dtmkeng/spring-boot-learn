@@ -24,4 +24,20 @@ public class EmployeeService {
     public void create(Employee employee) {
         employeeRepository.save(employee);
     }
+
+    public void update(Integer id, Employee employee) {
+        Employee emp = findById(id);
+        if (emp != null) {
+            emp.setLastName(employee.getLastName());
+            emp.setFistName(employee.getFistName());
+            employeeRepository.save(emp);
+        }
+    }
+
+    public void delete(Integer id) {
+        Employee emp = findById(id);
+        if (emp != null) {
+            employeeRepository.delete(emp);
+        }
+    }
 }
