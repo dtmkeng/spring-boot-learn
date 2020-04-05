@@ -1,7 +1,7 @@
 package com.spring.demo.learnspring;
 
 import com.spring.demo.learnspring.domain.Employee;
-import com.spring.demo.learnspring.repository.EmployeeRepository;
+import com.spring.demo.learnspring.repository.EmployeeReportRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 public class LearnSpringApplication {
 
 	@Bean
-	public CommandLineRunner app(EmployeeRepository employeeRepository) {
+	public CommandLineRunner app(EmployeeReportRepository employeeRepository) {
 		return (args -> {
 			employeeRepository.save(new Employee("Paryut","JanCha"));
 			employeeRepository.save(new Employee("Parwit","Watch"));

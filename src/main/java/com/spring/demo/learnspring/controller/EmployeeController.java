@@ -4,6 +4,7 @@ import com.spring.demo.learnspring.domain.Employee;
 import com.spring.demo.learnspring.response.EmployeeResponese;
 import com.spring.demo.learnspring.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
