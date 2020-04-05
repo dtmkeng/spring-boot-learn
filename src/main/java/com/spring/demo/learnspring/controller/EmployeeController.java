@@ -1,6 +1,7 @@
 package com.spring.demo.learnspring.controller;
 
 import com.spring.demo.learnspring.domain.Employee;
+import com.spring.demo.learnspring.response.EmployeeResponese;
 import com.spring.demo.learnspring.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,5 +47,15 @@ public class EmployeeController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         employeeService.delete(id);
+    }
+
+    @GetMapping("/firstName/{firstName}")
+    public List<Employee> findByFirstName(@PathVariable String firstName) {
+        return employeeService.findByFirstName(firstName);
+    }
+
+    @GetMapping("/nativeQuery")
+    public List<EmployeeResponese> getEmployeeNativeQuery(){
+        return employeeService.getNativeQuery();
     }
 }

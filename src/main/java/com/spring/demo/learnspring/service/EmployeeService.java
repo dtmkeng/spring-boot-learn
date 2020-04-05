@@ -2,6 +2,7 @@ package com.spring.demo.learnspring.service;
 
 import com.spring.demo.learnspring.domain.Employee;
 import com.spring.demo.learnspring.repository.EmployeeRepository;
+import com.spring.demo.learnspring.response.EmployeeResponese;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,5 +40,13 @@ public class EmployeeService {
         if (emp != null) {
             employeeRepository.delete(emp);
         }
+    }
+
+    public List<Employee> findByFirstName(String firstName) {
+        return employeeRepository.findByFirstName(firstName);
+    }
+
+    public List<EmployeeResponese> getNativeQuery() {
+        return employeeRepository.findByNativeQuery();
     }
 }
